@@ -97,25 +97,6 @@ const sorting = (arr) => {
   return arr;
 };
 
-// const sorting = (arr) => {
-//   for (let i = 0; i < deck.length; i++) {
-//     let auxMin = i;
-//     for (let j = i; j < arr.length; j++) {
-//       if (arr[j] < arr[auxMin]) {
-//         auxMin = j;
-//       }
-//       if (auxMin !== i) {
-//         let aux = arr[auxMin];
-//         arr[auxMin] = arr[i];
-//         arr[i] = aux;
-//         nuevoDeck.push(arr.slice(0));
-//       }
-//     }
-//     console.log(arr)
-//   }
-//   return arr;
-// };
-
 btnDraw.addEventListener("click", () => {
   contenedorCartas.innerHTML = "";
   deck = card(cantidad.value);
