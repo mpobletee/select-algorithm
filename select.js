@@ -47,24 +47,24 @@ const value = (value) =>
   value == 1
     ? "A"
     : value == 11
-    ? "J"
-    : value == 12
-    ? "Q"
-    : value == 13
-    ? "K"
-    : value;
+      ? "J"
+      : value == 12
+        ? "Q"
+        : value == 13
+          ? "K"
+          : value;
 
-    // if (tipoCarta == "&hearts;" || tipoCarta == "&diams;") {
-    //   header.classList.add("text-danger");
-    //   footer.classList.add("text-danger");
-    // }
+// if (tipoCarta == "&hearts;" || tipoCarta == "&diams;") {
+//   header.classList.add("text-danger");
+//   footer.classList.add("text-danger");
+// }
 
-    const color = (item) =>
-    item == "&hearts;"
+const color = (item) =>
+  item == "&hearts;"
     ? "color:red;"
     : item == "&diams;"
-    ? "color:red;"
-    : "color:black;";
+      ? "color:red;"
+      : "color:black;";
 
 const generateCard = (card) => {
   let valorCarta = card.valor;
@@ -83,19 +83,38 @@ let deck = [];
 let nuevoDeck = [];
 const sorting = (arr) => {
   let min = 0;
-  while (min < arr.length-1){
-      for(let i = min+1; i < arr.length-1; i++) {
-        if (arr[min].valor > arr[i].valor) {
-          let aux = arr[min];
-          arr[min] = arr[i];
-          arr[i] = aux;
-          nuevoDeck.push(arr.slice(0));
-        }
+  while (min < arr.length - 1) {
+    for (let i = min + 1; i < arr.length ; i++) {
+      if (arr[min].valor > arr[i].valor) {
+        let aux = arr[min];
+        arr[min] = arr[i];
+        arr[i] = aux;
+        nuevoDeck.push(arr.slice(0));
       }
-      min++;
+    }
+    min++;
   }
   return arr;
 };
+
+// const sorting = (arr) => {
+//   for (let i = 0; i < deck.length; i++) {
+//     let auxMin = i;
+//     for (let j = i; j < arr.length; j++) {
+//       if (arr[j] < arr[auxMin]) {
+//         auxMin = j;
+//       }
+//       if (auxMin !== i) {
+//         let aux = arr[auxMin];
+//         arr[auxMin] = arr[i];
+//         arr[i] = aux;
+//         nuevoDeck.push(arr.slice(0));
+//       }
+//     }
+//     console.log(arr)
+//   }
+//   return arr;
+// };
 
 btnDraw.addEventListener("click", () => {
   contenedorCartas.innerHTML = "";
@@ -115,8 +134,8 @@ btnSort.addEventListener("click", () => {
           .join("")}</div>`
     )
     .join("");
-    nuevoDeck = [];
-    // deck = [];
-    // console.log('click')
-  });
+  nuevoDeck = [];
+  // deck = [];
+  // console.log('click')
+});
 
